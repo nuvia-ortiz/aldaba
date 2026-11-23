@@ -1,0 +1,18 @@
+{
+  "name": "aldaba",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Aldaba design system: Figma plugin and hand-coded HTML/CSS site for a fictional guesthouse in Camagüey.",
+  "type": "module",
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "tokens:check": "node scripts/build-tokens.mjs --check",
+    "serve": "node scripts/serve.mjs",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "axe-core": "^4.14.1"
+  },
+  "license": "MIT"
+}

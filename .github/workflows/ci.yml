@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Los tokens CSS coinciden con los de Figma
+        run: npm run tokens:check
+      - name: El plugin de Figma tiene sintaxis válida
+        run: node --check figma-plugin/code.js
+      - run: npx playwright install --with-deps chromium
+      - name: Accesibilidad (axe), formulario, menú y peso de página
+        run: npm test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-results
+          path: test-results/

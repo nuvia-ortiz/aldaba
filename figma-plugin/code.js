@@ -7,7 +7,7 @@ const PRIMITIVES = {
   "terracotta/500": "#C2643A", "terracotta/600": "#A9522C", "terracotta/700": "#8A4223", "terracotta/900": "#4A2313",
   "green/50": "#EEF4F0", "green/100": "#D3E4D9", "green/500": "#3E7A58", "green/700": "#2A5940", "green/900": "#163324",
   "sand/50": "#FBF8F3", "sand/100": "#F3EDE3", "sand/200": "#E6DCCB", "sand/400": "#BFAF95", "sand/600": "#8C7B62",
-  "ink/300": "#A39A93", "ink/500": "#6B625C", "ink/700": "#3D3531", "ink/800": "#2A2420", "ink/900": "#1F1A17",
+  "ink/200": "#B3AAA3", "ink/300": "#A39A93", "ink/500": "#6B625C", "ink/700": "#3D3531", "ink/800": "#2A2420", "ink/900": "#1F1A17",
   "white": "#FFFFFF",
   "red/50": "#FEF3F2", "red/300": "#FDA29B", "red/600": "#B42318", "red/900": "#55160C",
   "amber/50": "#FFFAEB", "amber/300": "#FEC84B", "amber/600": "#B54708", "amber/900": "#4E1D09",
@@ -21,7 +21,7 @@ const SEMANTIC = [
   ["border/default", "sand/200", "ink/700"],
   ["border/strong", "sand/600", "ink/300"], // ≥ 3:1 sobre los fondos (WCAG 1.4.11)
   ["text/primary", "ink/900", "sand/50"],
-  ["text/secondary", "ink/500", "ink/300"],
+  ["text/secondary", "ink/500", "ink/200"], // oscuro: ≥ 4.5:1 también sobre bg/subtle
   ["text/on-accent", "white", "ink/900"],
   ["accent/default", "terracotta/600", "terracotta/300"],
   ["accent/hover", "terracotta/700", "terracotta/100"],

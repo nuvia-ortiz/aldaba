@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casa Aldaba · Casa de huéspedes en el centro histórico de Camagüey</title>
+  <meta name="description" content="Tres habitaciones alrededor de un patio con tinajones, a dos calles de la Plaza del Carmen, en Camagüey. Desayuno criollo incluido. (Proyecto ficticio de portfolio.)">
+  <meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1f1a17" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Casa Aldaba · Camagüey">
+  <meta property="og:description" content="Casa colonial con patio de tinajones en el centro histórico de Camagüey. Proyecto ficticio de diseño.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("aldaba-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BedAndBreakfast",
+    "name": "Casa Aldaba (ficticia)",
+    "description": "Proyecto ficticio de portfolio: casa de huéspedes con tres habitaciones en el centro histórico de Camagüey.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Camagüey", "addressCountry": "CU" },
+    "priceRange": "35–55 USD"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="logo" href="./" aria-label="Casa Aldaba, inicio">Casa Aldaba</a>
+      <nav class="nav" id="menu" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="./" aria-current="page">Inicio</a></li>
+          <li><a class="nav__link" href="#habitaciones">Habitaciones</a></li>
+          <li><a class="nav__link" href="#barrio">El barrio</a></li>
+          <li><a class="nav__link" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__actions">
+        <button class="btn btn--ghost btn--sm theme-toggle" type="button" aria-pressed="false" hidden>Modo oscuro</button>
+        <button class="btn btn--ghost btn--sm nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+        <a class="btn navbar__cta" href="reservar.html">Reservar</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="section" aria-labelledby="titulo-hero">
+      <div class="container hero">
+        <div class="stack">
+          <h1 class="display" id="titulo-hero">Una casa colonial en el corazón de Camagüey</h1>
+          <p class="body-l muted">Tres habitaciones alrededor de un patio con tinajones, a dos calles de la Plaza del Carmen. Desayuno criollo incluido.</p>
+          <div class="btn-row">
+            <a class="btn btn--lg" href="reservar.html">Ver disponibilidad</a>
+            <a class="btn btn--secondary btn--lg" href="#barrio">Cómo llegar</a>
+          </div>
+        </div>
+        <div class="photo photo--hero caption" role="img" aria-label="Foto del patio interior con tinajones (pendiente)">Foto · patio con tinajones</div>
+      </div>
+    </section>
+
+    <section class="section" id="habitaciones" aria-labelledby="titulo-habitaciones">
+      <div class="container stack">
+        <h2 class="h2" id="titulo-habitaciones">Habitaciones</h2>
+        <ul class="rooms">
+          <li>
+            <article class="card" aria-labelledby="hab-patio">
+              <div class="photo caption" role="img" aria-label="Foto de la Habitación Patio (pendiente)">Foto · habitación</div>
+              <div class="card__body">
+                <span class="badge badge--success">Disponible</span>
+                <h3 class="h3" id="hab-patio">Habitación Patio</h3>
+                <p class="small muted">Cama doble · Baño propio · Da al patio interior</p>
+                <div class="card__footer">
+                  <p class="label">35 USD <span class="muted small">/ noche</span></p>
+                  <a class="btn btn--sm" href="reservar.html?habitacion=patio" aria-label="Reservar la Habitación Patio">Reservar</a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card" aria-labelledby="hab-tinajon">
+              <div class="photo caption" role="img" aria-label="Foto de la Habitación Tinajón (pendiente)">Foto · habitación</div>
+              <div class="card__body">
+                <span class="badge badge--warning">Últimas noches</span>
+                <h3 class="h3" id="hab-tinajon">Habitación Tinajón</h3>
+                <p class="small muted">Dos camas · Balcón a la calle · Aire acondicionado</p>
+                <div class="card__footer">
+                  <p class="label">40 USD <span class="muted small">/ noche</span></p>
+                  <a class="btn btn--sm" href="reservar.html?habitacion=tinajon" aria-label="Reservar la Habitación Tinajón">Reservar</a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card" aria-labelledby="hab-suite">
+              <div class="photo caption" role="img" aria-label="Foto de la Suite Aldaba (pendiente)">Foto · habitación</div>
+              <div class="card__body">
+                <span class="badge badge--accent">Favorita</span>
+                <h3 class="h3" id="hab-suite">Suite Aldaba</h3>
+                <p class="small muted">Cama grande · Sala de estar · Techos de 5 m</p>
+                <div class="card__footer">
+                  <p class="label">55 USD <span class="muted small">/ noche</span></p>
+                  <a class="btn btn--sm" href="reservar.html?habitacion=suite" aria-label="Reservar la Suite Aldaba">Reservar</a>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--subtle" id="barrio" aria-labelledby="titulo-ventajas">
+      <div class="container stack">
+        <h2 class="h2" id="titulo-ventajas">Por qué Casa Aldaba</h2>
+        <ul class="features">
+          <li class="stack stack--sm">
+            <h3 class="h3">Centro histórico</h3>
+            <p class="muted">A pie de la Plaza del Carmen, el Casino Campestre y las calles del tinajón.</p>
+          </li>
+          <li class="stack stack--sm">
+            <h3 class="h3">Luz de respaldo</h3>
+            <p class="muted">Batería para ventiladores, luces y wifi durante los apagones.</p>
+          </li>
+          <li class="stack stack--sm">
+            <h3 class="h3">Trato de familia</h3>
+            <p class="muted">Te recibimos nosotros y te ayudamos con taxis, excursiones y cambio.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="container footer__inner">
+      <div class="stack stack--sm">
+        <p class="h3">Casa Aldaba</p>
+        <p class="small muted">Calle Cisneros · Centro histórico de Camagüey</p>
+      </div>
+      <p class="caption muted">Proyecto ficticio de portfolio · Diseño y maquetación: <a href="https://nuvia-ortiz.github.io">Nuvia Ortiz Basulto</a></p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

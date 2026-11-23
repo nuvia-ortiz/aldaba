@@ -44,7 +44,34 @@ Si aparece un error, abre **Plugins → Development → Show/Hide console** y co
 - Se probaron tres casos: completo, plan sin modo oscuro y Figma sin la fuente Fraunces. Los tres terminan bien.
 - **Todavía no se ha ejecutado en Figma real.** Si algo falla allí, el mensaje de la consola dice qué.
 
-## Siguiente fase: maquetación
-Maquetar Inicio y Reservar **en HTML y CSS puros**, con los mismos tokens como variables CSS, y compararlos con el Figma.
+## Maquetación en HTML y CSS (`site/`)
+
+Las pantallas Inicio y Reservar maquetadas **a mano, sin frameworks**: HTML semántico, CSS moderno (grid, `clamp()`, propiedades personalizadas) y unos 6 KB de JavaScript que solo añaden comodidad. Sin JavaScript, la web se navega y se lee entera.
+
+<p>
+  <img src="docs/inicio-escritorio-claro.png" alt="Inicio en escritorio, modo claro" width="520">
+  <img src="docs/inicio-movil-oscuro.png" alt="Inicio en móvil, modo oscuro" width="180">
+  <img src="docs/reservar-movil-claro.png" alt="Reservar en móvil" width="180">
+</p>
+
+- **Una sola fuente de verdad para los tokens:** `npm run tokens` genera `site/css/tokens.css` a partir de los tokens del plugin de Figma. La integración continua falla si no coinciden.
+- **Modo oscuro:** sigue al sistema y además tiene un botón; la elección se recuerda.
+- **Ligera:** unos 34 KB sin comprimir (unos 8 KB comprimida) entre HTML, CSS y JS de la portada, sin contar las fuentes de Google.
+- **Formulario:** errores que explican cómo arreglarlos, un resumen de errores con enlaces a cada campo, `aria-invalid` y foco gestionado. El total se calcula según la habitación y las noches. **No envía nada:** es un proyecto de portfolio y lo dice.
+- **Diferencia con el Figma, a propósito:** el campo único «Fechas» se convierte en dos campos de fecha nativos (Llegada y Salida). Son más accesibles y en el móvil abren el calendario del sistema.
+
+### Ejecutar y probar
+
+```bash
+npm install
+npm run serve            # http://localhost:4173
+npm test                 # 27 pruebas: axe en claro y oscuro, móvil y escritorio, formulario, menú, peso
+npm run tokens:check     # tokens CSS = tokens de Figma
+node scripts/screenshots.mjs   # regenera las capturas de docs/ (con el servidor en marcha)
+```
+
+Hallazgos que corrigieron las pruebas y la revisión visual (contados en el caso de estudio):
+- El texto secundario sobre el fondo de sección en modo oscuro daba 4.34:1 (lo detectó axe). Se creó tinta 200: ahora da 5.25:1.
+- La regla `.btn` anulaba la que ocultaba «Menú» en escritorio y «Reservar» en el móvil. Se vio en las capturas y ahora hay una prueba que lo vigila.
 
 Ver `CASO-DE-ESTUDIO.md` para el guion de la página del portfolio.
