@@ -9,12 +9,12 @@ Revisado el 23-nov-2026.
 - `npm run tokens:check` en verde: la web y Figma usan los mismos tokens.
 
 ## Lo que falta
-2. **Ejecutar el plugin en Figma de escritorio** y arreglar lo que salga.
-3. **Fotos reales** (propias o con licencia libre) en Figma y en la web, en WebP y con `width` y `height` para que la página no salte al cargar.
-4. **Retoques a mano en Figma:** ritmo vertical en el móvil, prototipo conectado, publicarlo en Figma Community.
-5. **Revisar contraste con un plugin de Figma** y anotarlo en `CASO-DE-ESTUDIO.md`.
-6. **Enlace a Figma Community** en el README y en la web portfolio, cuando esté publicado. Aldaba ya aparece en Proyectos con su demo y su repositorio.
-7. **Comparar Figma frente a la web con Frameproof** cuando el archivo de Figma exista. Sería una buena demostración de ese proyecto.
+1. **Ejecutar el plugin en Figma de escritorio** y arreglar lo que salga.
+2. **Fotos reales** (propias o con licencia libre) en Figma y en la web, en WebP y con `width` y `height` para que la página no salte al cargar.
+3. **Retoques a mano en Figma:** ritmo vertical en el móvil, prototipo conectado, publicarlo en Figma Community.
+4. **Revisar contraste con un plugin de Figma** y anotarlo en `CASO-DE-ESTUDIO.md`.
+5. **Enlace a Figma Community** en el README y en la web portfolio, cuando esté publicado. Aldaba ya aparece en Proyectos con su demo y su repositorio.
+6. **Comparar Figma frente a la web con Frameproof** cuando el archivo de Figma exista. Sería una buena demostración de ese proyecto.
 
 ## Ideas
 - Página de cada habitación con galería.
