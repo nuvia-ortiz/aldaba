@@ -41,6 +41,8 @@ Contrastes calculados con la fórmula de la WCAG 2.x sobre los hex:
 
 **Hallazgo y corrección:** el borde de los campos del formulario (arena 400) daba **2.15:1** sobre blanco y no cumplía el mínimo de 3:1 para controles (WCAG 1.4.11): alguien con baja visión no vería dónde escribir. Se creó **arena 600** (#8C7B62, 4.10:1). En oscuro, el borde pasó de tinta 500 (2.57:1) a tinta 300 (5.54:1).
 
+**Segundo hallazgo, en la maqueta:** la prueba automática con axe detectó que en modo oscuro el texto secundario sobre el fondo de sección daba 4.34:1. Se corrigió el token en Figma (tinta 200, 5.25:1) y la web lo heredó sola, porque los tokens CSS se generan desde los de Figma.
+
 Añadir aquí también el resultado de la revisión con un plugin de contraste en Figma.
 
 ## 7. Resultado
