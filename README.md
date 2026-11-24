@@ -2,6 +2,8 @@
 
 Proyecto de portfolio de diseño UI y maquetación. **Casa Aldaba** es una casa de huéspedes **ficticia** en el centro histórico de Camagüey: tres habitaciones alrededor de un patio con tinajones.
 
+**Archivo de Figma:** [Aldaba — Design System](https://www.figma.com/design/TX6AvQohQD6dofHZ1TKATo/Aldaba-Design-System) (público, solo lectura) · **Web:** https://nuvia-ortiz.github.io/aldaba/
+
 Inspiración visual: el barro de los tinajones (terracota), el verde de los patios interiores y la cal de las fachadas (arena). Titulares con serifa (Fraunces) y texto en Inter.
 
 ## Qué se genera en Figma
