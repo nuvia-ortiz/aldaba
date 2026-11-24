@@ -8,8 +8,7 @@ Inspiración visual: el barro de los tinajones (terracota), el verde de los pati
 
 | Página | Contenido |
 |---|---|
-| 📕 Portada | Portada del archivo para Figma Community |
-| 🎨 Fundamentos | Colores semánticos con su primitivo y su hex, escala tipográfica, espaciado y radios |
+| 📕 Portada y fundamentos | Portada del archivo y, a su derecha, colores semánticos con su primitivo y su hex, escala tipográfica, espaciado y radios |
 | 🧩 Componentes | **Button** (27 variantes: Primary, Secondary y Ghost × Sm, Md y Lg × Default, Hover y Disabled), **Input** (Default, Focus, Error, Disabled), **Badge** (4 tonos), **Room card**, **Navbar** y **Footer** (escritorio y móvil) |
 | 📱 Pantallas | Inicio y Reservar en escritorio (1440) y móvil (390), más Inicio en **modo oscuro** |
 

@@ -399,6 +399,7 @@ async function createFooter(parent, mobile) {
   c.primaryAxisSizingMode = mobile ? "AUTO" : "FIXED";
   c.counterAxisSizingMode = mobile ? "FIXED" : "AUTO";
   c.resize(mobile ? 390 : 1440, 120);
+  if (mobile) c.primaryAxisSizingMode = "AUTO"; else c.counterAxisSizingMode = "AUTO"; // resize() deja el alto fijo
   if (!mobile) c.primaryAxisAlignItems = "SPACE_BETWEEN";
   bindPadding(c, "space/12", mobile ? "space/4" : "space/16");
   bindGap(c, "space/4");
@@ -423,8 +424,8 @@ function layoutSet(set, width) {
   set.layoutMode = "HORIZONTAL";
   set.layoutWrap = "WRAP";
   set.primaryAxisSizingMode = "FIXED";
-  set.counterAxisSizingMode = "AUTO";
   set.resize(width, 100);
+  set.counterAxisSizingMode = "AUTO"; // después de resize(): resize() lo deja fijo y recorta variantes
   set.itemSpacing = 24;
   set.counterAxisSpacing = 24;
   set.paddingTop = set.paddingBottom = set.paddingLeft = set.paddingRight = 32;
@@ -447,12 +448,12 @@ async function buildCover(page) {
   f.fills = [paint(S["bg/canvas"])];
   f.appendChild(await text("Aldaba", "Display", "accent/default"));
   f.appendChild(await text("Sistema de diseño y web de Casa Aldaba", "H1", "text/primary"));
-  f.appendChild(await text("Casa de huéspedes ficticia en el centro histórico de Camagüey. Tokens, componentes y pantallas en modo claro y oscuro.", "Body L", "text/secondary"));
+  f.appendChild(await text("Casa de huéspedes ficticia en el centro histórico de Camagüey. Tokens, componentes y pantallas de escritorio y móvil" + (darkModeId ? ", en modo claro y oscuro." : "."), "Body L", "text/secondary"));
   f.appendChild(await text("Nuvia Ortiz Basulto · 2026", "Label", "text/primary"));
   page.appendChild(f);
 }
 
-async function buildFoundations(page) {
+async function buildFoundations(page, x = 0) {
   await figma.setCurrentPageAsync(page);
   const root = stack("Fundamentos", "VERTICAL", "space/12");
   bindPadding(root, "space/16", "space/16");
@@ -530,6 +531,8 @@ async function buildFoundations(page) {
   }
   root.appendChild(radii);
   page.appendChild(root);
+  root.x = x;
+  root.y = 0;
 }
 
 async function buildComponents(page) {
@@ -737,14 +740,14 @@ async function main() {
   await createVariables();
   await createTextStyles();
 
+  // 3 páginas: el plan Starter (gratis) de Figma no permite más por archivo.
   const cover = figma.root.children[0];
-  cover.name = "📕 Portada";
-  const foundations = figma.createPage(); foundations.name = "🎨 Fundamentos";
+  cover.name = "📕 Portada y fundamentos";
   const components = figma.createPage(); components.name = "🧩 Componentes";
   const screens = figma.createPage(); screens.name = "📱 Pantallas";
 
   await buildCover(cover);
-  await buildFoundations(foundations);
+  await buildFoundations(cover, 1920 + 160);
   const C = await buildComponents(components);
   await buildScreens(screens, C);
 
