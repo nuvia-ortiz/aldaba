@@ -1,78 +1,73 @@
-# Aldaba — sistema de diseño de Casa Aldaba
+# Aldaba — design system for Casa Aldaba
 
-Proyecto de portfolio de diseño UI y maquetación. **Casa Aldaba** es una casa de huéspedes **ficticia** en el centro histórico de Camagüey: tres habitaciones alrededor de un patio con tinajones.
+A UI design and front-end portfolio project. **Casa Aldaba** is a **fictional** guesthouse in the old town of Camagüey, Cuba: three rooms around a courtyard with *tinajones*, the city's traditional clay water jars.
 
-**Archivo de Figma:** [Aldaba — Design System](https://www.figma.com/design/TX6AvQohQD6dofHZ1TKATo/Aldaba-Design-System) (público, solo lectura) · **Web:** https://nuvia-ortiz.github.io/aldaba/
+**Figma file:** [Aldaba — Design System](https://www.figma.com/design/TX6AvQohQD6dofHZ1TKATo/Aldaba-Design-System) (public, view-only) · **Live site:** https://nuvia-ortiz.github.io/aldaba/
 
-Inspiración visual: el barro de los tinajones (terracota), el verde de los patios interiores y la cal de las fachadas (arena). Titulares con serifa (Fraunces) y texto en Inter.
+Visual inspiration: the clay of the *tinajones* (terracotta), the green of the inner courtyards and the lime-washed façades (sand). Serif headings (Fraunces) and body text in Inter.
 
-## Qué se genera en Figma
+> **Español:** sistema de diseño y web de una casa de huéspedes ficticia en Camagüey. Un plugin de Figma propio genera variables, estilos, componentes y pantallas; la web está maquetada a mano en HTML y CSS con los mismos tokens y pruebas de accesibilidad.
 
-| Página | Contenido |
+## What the plugin builds in Figma
+
+| Page | Contents |
 |---|---|
-| 📕 Portada y fundamentos | Portada del archivo y, a su derecha, colores semánticos con su primitivo y su hex, escala tipográfica, espaciado y radios |
-| 🧩 Componentes | **Button** (27 variantes: Primary, Secondary y Ghost × Sm, Md y Lg × Default, Hover y Disabled), **Input** (Default, Focus, Error, Disabled), **Badge** (4 tonos), **Room card**, **Navbar** y **Footer** (escritorio y móvil) |
-| 📱 Pantallas | Inicio y Reservar en escritorio (1440) y móvil (390), más Inicio en **modo oscuro** |
+| 📕 Cover and foundations | File cover and, beside it, semantic colours with their primitive and hex, type scale, spacing and radii |
+| 🧩 Components | **Button** (27 variants: Primary, Secondary and Ghost × Sm, Md and Lg × Default, Hover and Disabled), **Input** (Default, Focus, Error, Disabled), **Badge** (4 tones), **Room card**, **Navbar** and **Footer** (desktop and mobile) |
+| 📱 Screens | Home and Booking on desktop (1440) and mobile (390), plus Home in **dark mode** on plans that allow it |
 
-Todo es nativo de Figma:
-- **Variables:** 3 colecciones. Los primitivos; los semánticos con modos **Claro** y **Oscuro**; y espaciado y radios.
-- **9 estilos de texto.**
-- **Componentes con variantes y auto layout.**
-- **Todos los colores, espaciados y radios enlazados a variables.** Cambiar un token actualiza todo el archivo.
+Everything is native Figma:
+- **Variables:** 3 collections. Primitives; semantic colours with **Light** and **Dark** modes; and spacing and radii.
+- **9 text styles.**
+- **Components with variants and auto layout.**
+- **Every colour, spacing and radius bound to a variable.** Changing a token updates the whole file.
 
-## Cómo generarlo (unos 2 minutos)
+The public file was generated on Figma's Starter plan: 3 pages, 62 variables, 9 text styles, 8 components and 4 screens. That plan allows only one variable mode, so the plugin skips dark mode there and says so when it finishes. The website does have dark mode.
 
-1. Abre **Figma de escritorio** (los plugins en desarrollo no funcionan en el navegador) y crea un **archivo de diseño nuevo y vacío**.
-2. Menú **Plugins → Development → Import plugin from manifest…** y elige `figma-plugin/manifest.json`.
-3. Menú **Plugins → Development → Aldaba Design System**.
-4. Espera el mensaje «Listo: Aldaba creado…».
+## How to generate it (about 2 minutes)
 
-Si aparece un error, abre **Plugins → Development → Show/Hide console** y copia el mensaje.
+1. Open **Figma desktop** (plugins in development don't run in the browser) and create a **new, empty design file**.
+2. **Plugins → Development → Import plugin from manifest…** and choose `figma-plugin/manifest.json`.
+3. **Plugins → Development → Aldaba Design System**.
+4. Wait for the message "Listo: Aldaba creado…".
 
-**Plan gratuito de Figma:** puede no permitir dos modos de variables. En ese caso el plugin crea todo sin el modo oscuro y lo avisa al terminar.
+If an error appears, open **Plugins → Development → Show/Hide console** and copy the message.
 
-## Después de generarlo, a mano (aquí está el trabajo de diseño que se enseña)
+## How it was tested
 
-1. **Fotos:** sustituye los recuadros «Foto · …» por fotos con licencia libre (Unsplash o Pexels) o propias. Basta con arrastrarlas encima del recuadro.
-2. **Revisa el ritmo vertical y los saltos de línea** de los titulares en el móvil.
-3. **Prototipo:** conecta «Ver disponibilidad» y «Reservar» con la pantalla Reservar. Añade la variante Hover con *While hovering*.
-4. **Accesibilidad:** el texto principal y los botones superan la proporción de contraste 4.5:1 (calculada sobre los hex). Compruébalo también con un plugin de contraste (por ejemplo, Stark) y anota el resultado en el caso de estudio.
-5. **Publicarlo en Figma Community** con la portada.
+- The plugin was first tested against a **mock of the Figma API** that enforces font loading order, "fill container" auto layout, valid variants and bound variables, in three cases: full, a plan without dark mode, and Figma without the Fraunces font.
+- Then it was **run in real Figma**, which caught two problems the mock didn't: the Starter plan's 3-page limit, and `resize()` fixing the height of variant sets so only 6 of the 27 Button variants showed. Both are fixed in the plugin.
 
-## Estado de las pruebas
+## Hand-coded HTML and CSS (`site/`)
 
-- El plugin **se ha probado contra una simulación de la API de Figma**, que hace cumplir el orden de carga de fuentes, el auto layout para «llenar contenedor», las variantes válidas y las variables enlazadas.
-- Se probaron tres casos: completo, plan sin modo oscuro y Figma sin la fuente Fraunces. Los tres terminan bien.
-- **Todavía no se ha ejecutado en Figma real.** Si algo falla allí, el mensaje de la consola dice qué.
-
-## Maquetación en HTML y CSS (`site/`)
-
-Las pantallas Inicio y Reservar maquetadas **a mano, sin frameworks**: HTML semántico, CSS moderno (grid, `clamp()`, propiedades personalizadas) y unos 6 KB de JavaScript que solo añaden comodidad. Sin JavaScript, la web se navega y se lee entera.
+The Home and Booking screens are built **by hand, with no framework**: semantic HTML, modern CSS (grid, `clamp()`, custom properties) and about 6 KB of JavaScript that only adds convenience. Without JavaScript the whole site can still be read and navigated.
 
 <p>
-  <img src="docs/inicio-escritorio-claro.png" alt="Inicio en escritorio, modo claro" width="520">
-  <img src="docs/inicio-movil-oscuro.png" alt="Inicio en móvil, modo oscuro" width="180">
-  <img src="docs/reservar-movil-claro.png" alt="Reservar en móvil" width="180">
+  <img src="docs/inicio-escritorio-claro.png" alt="Home on desktop, light mode" width="520">
+  <img src="docs/inicio-movil-oscuro.png" alt="Home on mobile, dark mode" width="180">
+  <img src="docs/reservar-movil-claro.png" alt="Booking on mobile" width="180">
 </p>
 
-- **Una sola fuente de verdad para los tokens:** `npm run tokens` genera `site/css/tokens.css` a partir de los tokens del plugin de Figma. La integración continua falla si no coinciden.
-- **Modo oscuro:** sigue al sistema y además tiene un botón; la elección se recuerda.
-- **Ligera:** unos 34 KB sin comprimir (unos 8 KB comprimida) entre HTML, CSS y JS de la portada, sin contar las fuentes de Google.
-- **Formulario:** errores que explican cómo arreglarlos, un resumen de errores con enlaces a cada campo, `aria-invalid` y foco gestionado. El total se calcula según la habitación y las noches. **No envía nada:** es un proyecto de portfolio y lo dice.
-- **Diferencia con el Figma, a propósito:** el campo único «Fechas» se convierte en dos campos de fecha nativos (Llegada y Salida). Son más accesibles y en el móvil abren el calendario del sistema.
+- **One source of truth for tokens:** `npm run tokens` generates `site/css/tokens.css` from the Figma plugin's tokens. CI fails if they don't match.
+- **Dark mode:** follows the system setting and also has a toggle; the choice is remembered.
+- **Lightweight:** about 34 KB uncompressed (about 8 KB compressed) of HTML, CSS and JS for the home page, not counting Google Fonts.
+- **Form:** error messages that say how to fix the problem, an error summary linking to each field, `aria-invalid` and managed focus. The total is calculated from the room and the number of nights. **It sends nothing:** it's a portfolio project and says so.
+- **A deliberate difference from the Figma design:** the single "Dates" field becomes two native date fields (Arrival and Departure). They are more accessible and open the system calendar on mobile.
 
-### Ejecutar y probar
+### Run and test
 
 ```bash
 npm install
 npm run serve            # http://localhost:4173
-npm test                 # 27 pruebas: axe en claro y oscuro, móvil y escritorio, formulario, menú, peso
-npm run tokens:check     # tokens CSS = tokens de Figma
-node scripts/screenshots.mjs   # regenera las capturas de docs/ (con el servidor en marcha)
+npm test                 # axe in light and dark, mobile and desktop, form, menu, no horizontal scroll, page weight
+npm run tokens:check     # CSS tokens = Figma tokens
+node scripts/screenshots.mjs   # regenerates the screenshots in docs/ (with the server running)
 ```
 
-Hallazgos que corrigieron las pruebas y la revisión visual (contados en el caso de estudio):
-- El texto secundario sobre el fondo de sección en modo oscuro daba 4.34:1 (lo detectó axe). Se creó tinta 200: ahora da 5.25:1.
-- La regla `.btn` anulaba la que ocultaba «Menú» en escritorio y «Reservar» en el móvil. Se vio en las capturas y ahora hay una prueba que lo vigila.
+Findings that the tests and visual review caught:
+- Secondary text on the section background in dark mode had a 4.34:1 contrast ratio (caught by axe). A new ink 200 token brings it to 5.25:1.
+- The `.btn` rule overrode the one that hid "Menu" on desktop and "Book" on mobile. It showed up in the screenshots, and a test now guards it.
 
-Ver `CASO-DE-ESTUDIO.md` para el guion de la página del portfolio.
+## License
+
+[MIT](LICENSE).
